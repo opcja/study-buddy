@@ -1,22 +1,36 @@
-import styled from 'styled-components';
+import React from 'react';
+import { StyledNavigation, StyledLink, Logo } from './Navigation.styles';
 
-export const Navigation = styled.nav`
-  ul {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-  }
+const Navigation = () => (
+  <StyledNavigation>
+    <Logo>
+      <h1>
+        Study
+        <br />
+        Buddy
+      </h1>
+    </Logo>
+    <ul>
+      <li>
+        <StyledLink exact="true" to="/">
+          Dashboard
+        </StyledLink>
+      </li>
+      <li>
+        <StyledLink to="/add-user">Add user</StyledLink>
+      </li>
+      {/* <li>
+        <StyledLink activeClassName="active-link" to="/settings">
+          Settings
+        </StyledLink>
+      </li>
+      <li>
+        <StyledLink activeClassName="active-link" to="/">
+          Logout
+        </StyledLink>
+      </li> */}
+    </ul>
+  </StyledNavigation>
+);
 
-  li:not(:last-child) {
-    margin-bottom: 24px;
-  }
-
-  a {
-    display: block;
-    color: ${({ theme }) => theme.colors.darkGrey};
-    text-decoration: none;
-    font-size: ${({ theme }) => theme.fontSize.s};
-    font-weight: bold;
-    text-align: right;
-  }
-`;
+export default Navigation;

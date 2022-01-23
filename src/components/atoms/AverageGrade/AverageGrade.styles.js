@@ -26,5 +26,4 @@ export const Wrapper = styled.div`
   font-size: ${({ theme }) => theme.fontSize.m};
   font-weight: bold;
   margin-right: 30px;
-  cursor: pointer;
 `;
