@@ -4,9 +4,8 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'assets/styles/GlobalStyle';
 import { theme } from 'assets/styles/theme';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AddUserForm from './AddUserForm';
-import Navigation from 'components/molecules/Navigation/Navigation';
-import { LayoutWrapper } from 'components/templates/LayoutWrapper/LayoutWrapper.styles';
+import AddUserForm from './AddUserForm/AddUserForm';
+import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 import UsersProvider from 'providers/UsersProvider';
 
 const Root = () => {
@@ -14,15 +13,14 @@ const Root = () => {
     <Router>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <LayoutWrapper>
+        <MainTemplate>
           <UsersProvider>
-            <Navigation></Navigation>
             <Routes>
               <Route path="/add-user" element={<AddUserForm />}></Route>
               <Route path="/" element={<Dashboard />}></Route>
             </Routes>
           </UsersProvider>
-        </LayoutWrapper>
+        </MainTemplate>
       </ThemeProvider>
     </Router>
   );
